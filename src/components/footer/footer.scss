@@ -1,0 +1,26 @@
+.Footer {
+  background-color: rgb(2, 36, 77);
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem;
+
+  h1 {
+    color: rgb(248, 226, 198);
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: white;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    margin-bottom: 0.1rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    letter-spacing: -0.03rem;
+  }
+}

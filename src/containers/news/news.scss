@@ -1,0 +1,15 @@
+.News {
+  display: grid;
+}
+
+@media only screen and (min-width: 1440px) {
+  .News {
+    grid-template-columns: repeat(2, minmax(25rem, 1fr));
+  }
+}
+
+// @media only screen and (min-width: 1920px) {
+//   .News {
+//     grid-template-columns: repeat(3, minmax(25rem, 1fr));
+//   }
+// }

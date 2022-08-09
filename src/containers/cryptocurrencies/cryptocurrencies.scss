@@ -1,0 +1,32 @@
+.Cryptocurrencies {
+  width: 100%;
+  ul {
+    list-style: none;
+    padding-left: 0.1em;
+    display: grid;
+
+    grid-template-columns: repeat(1, minmax(19rem, 1fr));
+    column-gap: 2rem;
+    width: 100%;
+
+    li {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Cryptocurrencies {
+    ul {
+      grid-template-columns: repeat(2, minmax(19rem, 1fr));
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .Cryptocurrencies {
+    ul {
+      grid-template-columns: repeat(3, minmax(19rem, 1fr));
+    }
+  }
+}

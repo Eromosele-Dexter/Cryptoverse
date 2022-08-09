@@ -1,0 +1,51 @@
+.Home {
+  width: 100%;
+  .heading {
+    margin-bottom: 2.5rem;
+  }
+  .stats {
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(8rem, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: rgb(0, 191, 255);
+      font-weight: 600;
+      font-size: 1.2rem;
+
+      &:hover {
+        color: rgb(0, 166, 255);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Home {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 90%;
+      h2 {
+        margin-bottom: unset;
+      }
+      a {
+        // color: red;
+      }
+    }
+
+    .cryptos {
+      margin-bottom: 3rem;
+    }
+  }
+}

@@ -5,29 +5,49 @@
   color: #0071bd;
   max-width: 95%;
   .chart-title {
-    color: #0071bd !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.05rem !important;
+    color: #0071bd;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    font-size: 1rem;
   }
   .price-container {
-    display: flex !important;
-    gap: 1.25rem !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
   }
   .price-change {
-    font-weight: 500 !important;
+    font-weight: 500;
   }
   .current-price {
-    margin-top: 0px !important;
-    font-weight: 500 !important;
-  }
-
-  canvas {
-    max-width: 90%;
+    margin-top: 0px;
+    font-weight: 500;
   }
 }
 
-// @media only screen and (max-width:){
+.chart-box {
+  max-width: 90vw !important;
+  min-height: 15rem !important;
+  margin-top: 1rem;
+  position: relative;
+}
 
-// }
+@media only screen and (min-width: 600px) {
+  .chart-header {
+    display: inline-block;
+    .chart-title {
+      font-size: 1.5rem;
+    }
+    .price-container {
+      margin: 1rem 0;
+      font-size: 1rem;
+      gap: 1.25rem;
+
+      .price-change {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

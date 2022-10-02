@@ -2,8 +2,11 @@ import React from "react";
 import "./exchanges.scss";
 
 const Exchanges = () => {
-  // DISPLAY FULL VIEW CHART OF SPECIFIC CRYPTO
-  return <div>Exchanges</div>;
+  return (
+    <div>
+      <h1>Exchanges API to be Updated ...</h1>
+    </div>
+  );
 };
 
 export default Exchanges;

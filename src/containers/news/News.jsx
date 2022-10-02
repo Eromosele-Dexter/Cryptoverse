@@ -9,7 +9,6 @@ import { useFetchCryptoNews } from "../../services/customHook";
 
 const News = ({ showAll }) => {
   const [category, setCategory] = useState("Cryptocurrency"); // for search crypto feature
-  const { data } = useGetCryptosQuery(100); // for search crypto feature
   const now = new Date();
 
   const firstDayOfMonth = new Date(
@@ -22,6 +21,7 @@ const News = ({ showAll }) => {
 
   const { articles, loading } = useFetchCryptoNews(category, extractedDate);
 
+  showAll = showAll || false;
   const value = showAll ? 12 : 6;
 
   if (loading) return <Loader />;

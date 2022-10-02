@@ -7,7 +7,7 @@ export const useFetchCryptos = (limit) => {
 
   const options = {
     method: "GET",
-    url: process.env.REACT_APP_CRYPTO_API_URL,
+    url: process.env.REACT_APP_CRYPTO_API_URL + "/coins",
     params: { limit: limit },
     headers: {
       "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,

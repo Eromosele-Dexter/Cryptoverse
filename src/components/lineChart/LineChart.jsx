@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./lineChart.scss";
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
@@ -7,6 +7,30 @@ import { Col, Row, Typography } from "antd";
 const { Title } = Typography;
 
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
+  const [windowSize, setWindowSize] = useState(getWindowWidth());
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowWidth());
+    }
+    if (windowSize < 550) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [windowSize]);
+
+  function getWindowWidth() {
+    const { innerWidth } = window;
+    return innerWidth;
+  }
+
   const coinPrice = [];
   const coinTimestamp = [];
 
@@ -51,6 +75,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   };
 
   const options = {
+    maintainAspectRatio: !show,
     scales: {
       yAxes: [
         {
@@ -71,7 +96,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     <>
       <Row className="chart-header">
         <Title level={2} className="chart-title">
-          {coinName} Price Chart{" "}
+          {coinName} Price Chart
         </Title>
         <Col className="price-container">
           <Title level={5} className="price-change">
@@ -86,7 +111,12 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           </Title>
         </Col>
       </Row>
-      <Line data={data} options={options} />
+      {(show && (
+        <div className="chart-box">
+          <Line data={data} options={options} />
+        </div>
+      )) ||
+        (!show && <Line data={data} options={options} />)}
     </>
   );
 };

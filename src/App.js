@@ -17,6 +17,7 @@ const App = () => {
             <BrowserRouter>
               <Routes>
                 <Route exact path="/" element={<Home />} />
+                <Route exact path="/Cryptoverse" element={<Home />} />
                 <Route exact path="/exchanges" element={<Exchanges />} />
                 <Route
                   exact

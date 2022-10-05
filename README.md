@@ -1,4 +1,4 @@
 # CRYPTROVERSE 
 
-LINK: https://majestic-ganache-f2c407.netlify.app/
+LINK:https://cryptoverse-f2c407.netlify.app/
 
